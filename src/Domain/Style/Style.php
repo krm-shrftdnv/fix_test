@@ -2,23 +2,34 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\MusicStyle;
+namespace App\Domain\Style;
 
+use App\Domain\Dance\Dance;
+use App\Domain\StyleDance\StyleDance;
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
+use Cycle\Annotated\Annotation\Relation\ManyToMany;
 
-#[Entity(table: 'music_style')]
-class MusicStyle implements \JsonSerializable
+#[Entity(table: 'style')]
+class Style implements \JsonSerializable
 {
     #[Column(type: 'primary')]
     private ?int $id;
     #[Column(type: 'string')]
     private string $name;
+    #[ManyToMany(target: Dance::class, throughInnerKey: 'style_id', throughOuterKey: 'dance_id', through: StyleDance::class)]
+    public array $dances = [];
 
-    public function __construct(?int $id, string $name)
+    public function __construct(
+        string $name,
+        ?int $id = null,
+        array $dances = [],
+    )
     {
         $this->id = $id;
         $this->name = $name;
+
+        $this->dances = $dances;
     }
 
     public function getId(): ?int

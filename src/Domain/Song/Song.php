@@ -21,7 +21,13 @@ class Song implements \JsonSerializable
     #[Column(type: 'integer')]
     private int $duration;
 
-    public function __construct(?int $id, string $name, int $styleId, bool $isPlaying, int $duration)
+    public function __construct(
+        string $name,
+        int    $styleId,
+        int    $duration,
+        ?int   $id = null,
+        bool   $isPlaying = false,
+    )
     {
         $this->id = $id;
         $this->name = $name;

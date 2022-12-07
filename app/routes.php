@@ -38,7 +38,7 @@ return function (App $app) {
     });
 
     $app->group('/style', function (Group $group) {
-        $group->get('', \App\Application\Actions\MusicStyle\ListAction::class);
+        $group->get('', \App\Application\Actions\Style\ListAction::class);
         $group->delete('/{id}', \App\Application\Actions\Action\DeleteAction::class);
         $group->post('', \App\Application\Actions\Action\CreateAction::class);
     });

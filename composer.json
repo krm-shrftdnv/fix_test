@@ -24,6 +24,7 @@
     "require": {
         "php": "^8.1",
         "ext-json": "*",
+        "awurth/slim-validation": "^3.4",
         "cycle/annotated": "^3.2",
         "cycle/entity-behavior": "^1.1",
         "cycle/orm": "^2.2",

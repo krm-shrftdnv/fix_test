@@ -2,50 +2,45 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Guest;
+namespace App\Domain\Dance;
 
 use App\Domain\Action\Action;
-use App\Domain\Skill\Skill;
+use App\Domain\DanceAction\DanceAction;
+use App\Domain\Style\Style;
+use App\Domain\StyleDance\StyleDance;
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
 use Cycle\Annotated\Annotation\Relation\ManyToMany;
-use JsonSerializable;
 
-#[Entity(table: 'guest')]
-class Guest implements JsonSerializable
+#[Entity(table: 'dance')]
+class Dance implements \JsonSerializable
 {
-    #[Column(type: 'primary')]
+    #[Column(type: 'integer')]
     private ?int $id;
     #[Column(type: 'string')]
     private string $name;
-    #[Column(type: 'string')]
-    private string $type;
-
-    #[ManyToMany(target: Action::class, throughInnerKey: 'guest_id', throughOuterKey: 'action_id', through: Skill::class)]
-    public array $skills = [];
+    #[ManyToMany(target: Action::class, throughInnerKey: 'dance_id', throughOuterKey: 'action_id', through: DanceAction::class)]
+    public array $actions = [];
+    #[ManyToMany(target: Style::class, throughInnerKey: 'dance_id', throughOuterKey: 'style_id', through: StyleDance::class)]
+    public array $styles = [];
 
     public function __construct(
-        string $type,
         string $name,
-        ?int   $id = null,
-        array  $skills = [],
+        ?int $id = null,
+        array $actions = [],
+        array $styles = [],
     )
     {
         $this->id = $id;
-        $this->type = $type;
         $this->name = $name;
 
-        $this->skills = $skills;
+        $this->actions = $actions;
+        $this->styles = $styles;
     }
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getType(): string
-    {
-        return $this->type;
     }
 
     public function getName(): string
@@ -58,7 +53,6 @@ class Guest implements JsonSerializable
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'type' => $this->type,
         ];
     }
 }

@@ -6,7 +6,7 @@ namespace App\Application\Actions\Play;
 
 use Psr\Http\Message\ResponseInterface as Response;
 
-class IndexAction extends BaseAction
+class StartAction extends BaseAction
 {
 
     protected function action(): Response

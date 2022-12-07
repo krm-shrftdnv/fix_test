@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions\MusicStyle;
+namespace App\Application\Actions\Style;
 
 use App\Domain\DomainException\DomainRecordNotFoundException;
 use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Exception\HttpBadRequestException;
 
-class ListAction extends BaseAction
+class DeleteAction extends \App\Application\Actions\Play\BaseAction
 {
 
     /**
@@ -16,6 +16,6 @@ class ListAction extends BaseAction
      */
     protected function action(): Response
     {
-        // TODO: Implement action() method.
+        return $this->response;
     }
 }

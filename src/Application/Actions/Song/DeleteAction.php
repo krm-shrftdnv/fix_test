@@ -2,20 +2,24 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions\Guest;
+namespace App\Application\Actions\Song;
 
-use App\Domain\DomainException\DomainRecordNotFoundException;
 use Psr\Http\Message\ResponseInterface as Response;
-use Slim\Exception\HttpBadRequestException;
+use Slim\Exception\HttpNotFoundException;
 
-class DeleteAction extends \App\Application\Actions\Play\BaseAction
+class DeleteAction extends BaseAction
 {
-
     /**
      * @inheritDoc
      */
     protected function action(): Response
     {
-        // TODO: Implement action() method.
+        $id = (int)$this->request->getAttribute('id');
+        $song = $this->songRepository->findByPK($id);
+        if ($song === null) {
+            throw new HttpNotFoundException($this->request);
+        }
+        $this->songRepository->delete($song);
+        return $this->response->withStatus(204);
     }
 }

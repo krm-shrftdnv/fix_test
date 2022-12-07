@@ -2,29 +2,27 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Services\Action\Dto;
+namespace App\Application\Services\Style\Dto;
 
 use App\Application\Services\LoadableFromArray;
 use Exception;
 
-class ActionDto implements LoadableFromArray
+class StyleDto implements LoadableFromArray
 {
     public function __construct(
         public ?int $id = null,
         public ?string $name = null,
-        public bool $isDefault = false,
     ) {
     }
 
     /**
      * @throws Exception
      */
-    public static function fromArray(array $data): ActionDto
+    public static function fromArray(array $data): self
     {
         return new self(
             id: $data['id'] ?? null,
             name: $data['name'],
-            isDefault: $data['is_default'],
         );
     }
 }

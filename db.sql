@@ -11,16 +11,16 @@ create unique index action_name_uindex
     on action (name);
 
 
-create table music_style
+create table style
 (
     id   serial
-        constraint music_style_pk
+        constraint style_pk
             primary key,
     name varchar not null
 );
 
-create unique index music_style_name_uindex
-    on music_style (name);
+create unique index style_name_uindex
+    on style (name);
 
 
 create table guest
@@ -38,10 +38,10 @@ create table song
     id         serial
         constraint song_pk
             primary key,
-    name       integer               not null,
+    name       varchar               not null,
     style_id   integer               not null
-        constraint song_music_style_id_fk
-            references music_style
+        constraint song_style_id_fk
+            references style
             on update cascade on delete cascade,
     is_playing boolean default false not null,
     duration   integer               not null
@@ -70,26 +70,26 @@ create index dance_action_dance_id_index
     on dance_action (dance_id);
 
 
-create table music_style_dance
+create table style_dance
 (
     id             serial
-        constraint music_style_dance_pk
+        constraint style_dance_pk
             primary key,
-    music_style_id int not null
-        constraint music_style_dance_music_style_id_fk
-            references music_style
+    style_id int not null
+        constraint style_dance_style_id_fk
+            references style
             on update cascade on delete cascade,
     dance_id       int not null
-        constraint music_style_dance_dance_id_fk
+        constraint style_dance_dance_id_fk
             references dance
             on update cascade on delete cascade
 );
 
-create index music_style_dance_dance_id_index
-    on music_style_dance (dance_id);
+create index style_dance_dance_id_index
+    on style_dance (dance_id);
 
-create index music_style_dance_music_style_id_index
-    on music_style_dance (music_style_id);
+create index style_dance_style_id_index
+    on style_dance (style_id);
 
 
 create table skill

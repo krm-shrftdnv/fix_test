@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions\Guest;
+namespace App\Application\Actions\Dance;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Exception\HttpNotFoundException;
@@ -15,11 +15,11 @@ class DeleteAction extends BaseAction
     protected function action(): Response
     {
         $id = (int)$this->request->getAttribute('id');
-        $guest = $this->guestRepository->findByPK($id);
-        if ($guest === null) {
+        $dance = $this->danceRepository->findByPK($id);
+        if ($dance === null) {
             throw new HttpNotFoundException($this->request);
         }
-        $this->guestRepository->delete($guest);
+        $this->danceRepository->delete($dance);
         return $this->response->withStatus(204);
     }
 }

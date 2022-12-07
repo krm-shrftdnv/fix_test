@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\MusicStyleAction;
+namespace App\Domain\StyleDance;
 
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
 
-#[Entity(table: 'music_style_action')]
-class MusicStyleAction
+#[Entity(table: 'style_dance')]
+class StyleDance
 {
     #[Column(type: 'primary')]
-    private int $id;
+    private ?int $id;
 }
