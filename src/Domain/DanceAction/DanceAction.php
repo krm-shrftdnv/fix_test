@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\DanceAction;
+namespace src\Domain\DanceAction;
 
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Persistence\User;
+namespace src\Infrastructure\Persistence\User;
 
-use App\Domain\User\User;
-use App\Domain\User\UserNotFoundException;
-use App\Domain\User\UserRepository;
+use src\Domain\User\User;
+use src\Domain\User\UserNotFoundException;
+use src\Domain\User\UserRepository;
 
 class InMemoryUserRepository implements UserRepository
 {

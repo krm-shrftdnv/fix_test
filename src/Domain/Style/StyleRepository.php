@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Style;
+namespace src\Domain\Style;
 
-use App\Infrastructure\Persistence\RepositoryInterface;
+use src\Infrastructure\Persistence\RepositoryInterface;
 
 interface StyleRepository extends RepositoryInterface
 {

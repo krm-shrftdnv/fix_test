@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions\Action;
+namespace src\Application\Actions\Action;
 
-use App\Application\Actions\ValidationException;
-use App\Application\Services\Action\Dto\ActionDto;
+use src\Application\Actions\ValidationException;
+use src\Application\Services\Action\Dto\ActionDto;
 use Exception;
 use Psr\Http\Message\ResponseInterface as Response;
 use Respect\Validation\Validator as V;
@@ -22,7 +22,7 @@ class CreateAction extends BaseAction
         $data = $this->request->getParsedBody();
         $this->validator->validate($data, [
             'name' => V::stringType(),
-            'is_default' => V::boolType(),
+            'is_default' => V::optional(V::boolType()),
         ]);
         if (!$this->validator->isValid()) {
             throw new ValidationException($this->request, $this->validator->getErrors());

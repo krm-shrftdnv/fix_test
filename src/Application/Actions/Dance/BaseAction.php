@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions\Dance;
+namespace src\Application\Actions\Dance;
 
-use App\Application\Actions\Action;
-use App\Application\Services\Dance\DanceService;
-use App\Domain\Dance\DanceRepository;
+use src\Application\Actions\Action;
+use src\Application\Services\Dance\DanceService;
+use src\Domain\Dance\DanceRepository;
 use Awurth\SlimValidation\Validator;
 use Psr\Log\LoggerInterface;
 

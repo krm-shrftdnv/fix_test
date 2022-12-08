@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Handlers;
+namespace src\Application\Handlers;
 
-use App\Application\Actions\ActionError;
-use App\Application\Actions\ActionPayload;
-use App\Application\Actions\ValidationException;
+use src\Application\Actions\ActionError;
+use src\Application\Actions\ActionPayload;
+use src\Application\Actions\ValidationException;
 use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Exception\HttpBadRequestException;
 use Slim\Exception\HttpException;

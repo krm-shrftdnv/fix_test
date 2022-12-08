@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions;
+namespace src\Application\Actions;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Exception\HttpException;

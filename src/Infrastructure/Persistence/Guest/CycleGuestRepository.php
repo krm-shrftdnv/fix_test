@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Persistence\Guest;
+namespace src\Infrastructure\Persistence\Guest;
 
-use App\Infrastructure\Persistence\Repository;
+use src\Infrastructure\Persistence\Repository;
 
-class CycleGuestRepository extends Repository implements \App\Domain\Guest\GuestRepository
+class CycleGuestRepository extends Repository implements \src\Domain\Guest\GuestRepository
 {
 
 }

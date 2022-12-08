@@ -59,7 +59,7 @@ return static function (ContainerBuilder $containerBuilder) {
             return $container->get(DatabaseManager::class)->database('default');
         },
         ORMInterface::class => function (ContainerInterface $container) {
-            $entitiesPath = dirname(__DIR__) . "/App/Domain";
+            $entitiesPath = dirname(__DIR__) . "/src/Domain";
             $finder = (new Finder())->files()->in([$entitiesPath]); // __DIR__ here is folder with entities
             $classLocator = new ClassLocator($finder);
             $cache = $container->get(CacheItemPoolInterface::class);

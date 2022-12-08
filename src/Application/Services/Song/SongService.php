@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Services\Song;
+namespace src\Application\Services\Song;
 
-use App\Application\Services\Song\Dto\SongDto;
-use App\Domain\Song\Song;
-use App\Domain\Song\SongRepository;
+use src\Application\Services\Song\Dto\SongDto;
+use src\Domain\Song\Song;
+use src\Domain\Song\SongRepository;
 
 class SongService
 {

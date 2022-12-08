@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Persistence\Dance;
+namespace src\Infrastructure\Persistence\Dance;
 
-use App\Infrastructure\Persistence\Repository;
+use src\Infrastructure\Persistence\Repository;
 
-class CycleDanceRepository extends Repository implements \App\Domain\Dance\DanceRepository
+class CycleDanceRepository extends Repository implements \src\Domain\Dance\DanceRepository
 {
 
 }

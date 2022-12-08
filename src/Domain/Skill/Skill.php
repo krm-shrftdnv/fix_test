@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Skill;
+namespace src\Domain\Skill;
 
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;

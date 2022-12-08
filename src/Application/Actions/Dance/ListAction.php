@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Application\Actions\Dance;
+namespace src\Application\Actions\Dance;
 
-use App\Domain\DomainException\DomainRecordNotFoundException;
+use src\Domain\DomainException\DomainRecordNotFoundException;
 use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Exception\HttpBadRequestException;
 

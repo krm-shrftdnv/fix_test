@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Persistence;
+namespace src\Infrastructure\Persistence;
 
 use Cycle\ORM\EntityManager;
 use Cycle\ORM\ORMInterface;

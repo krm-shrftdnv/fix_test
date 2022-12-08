@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Guest;
+namespace src\Domain\Guest;
 
-use App\Domain\Action\Action;
-use App\Domain\Skill\Skill;
+use src\Domain\Action\Action;
+use src\Domain\Skill\Skill;
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
 use Cycle\Annotated\Annotation\Relation\ManyToMany;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Services;
+namespace src\Application\Services;
 
 use Exception;
 

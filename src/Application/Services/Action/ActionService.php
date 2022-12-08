@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Services\Action;
+namespace src\Application\Services\Action;
 
-use App\Application\Services\Action\Dto\ActionDto;
-use App\Domain\Action\Action;
-use App\Domain\Action\ActionRepository;
+use src\Application\Services\Action\Dto\ActionDto;
+use src\Domain\Action\Action;
+use src\Domain\Action\ActionRepository;
 
 class ActionService
 {

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Application\Actions\User;
 
-use App\Application\Actions\ActionError;
-use App\Application\Actions\ActionPayload;
-use App\Application\Handlers\HttpErrorHandler;
-use App\Domain\User\User;
-use App\Domain\User\UserNotFoundException;
-use App\Domain\User\UserRepository;
+use src\Application\Actions\ActionError;
+use src\Application\Actions\ActionPayload;
+use src\Application\Handlers\HttpErrorHandler;
+use src\Domain\User\User;
+use src\Domain\User\UserNotFoundException;
+use src\Domain\User\UserRepository;
 use DI\Container;
 use Slim\Middleware\ErrorMiddleware;
 use Tests\TestCase;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\StyleDance;
+namespace src\Domain\StyleDance;
 
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;

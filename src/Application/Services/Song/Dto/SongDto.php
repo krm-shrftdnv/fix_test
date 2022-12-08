@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Services\Song\Dto;
+namespace src\Application\Services\Song\Dto;
 
-use App\Application\Services\LoadableFromArray;
+use src\Application\Services\LoadableFromArray;
 use Exception;
 
 class SongDto implements LoadableFromArray
@@ -27,7 +27,7 @@ class SongDto implements LoadableFromArray
             id: $data['id'] ?? null,
             styleId: $data['style_id'],
             name: $data['name'],
-            isPlaying: $data['is_playing'],
+            isPlaying: $data['is_playing'] ?? false,
             duration: $data['duration'],
         );
     }

@@ -2,15 +2,17 @@
 
 declare(strict_types=1);
 
-use App\Application\Handlers\HttpErrorHandler;
-use App\Application\Handlers\ShutdownHandler;
-use App\Application\ResponseEmitter\ResponseEmitter;
-use App\Application\Settings\SettingsInterface;
+use src\Application\Handlers\HttpErrorHandler;
+use src\Application\Handlers\ShutdownHandler;
+use src\Application\ResponseEmitter\ResponseEmitter;
+use src\Application\Settings\SettingsInterface;
 use DI\ContainerBuilder;
 use Slim\Factory\AppFactory;
 use Slim\Factory\ServerRequestCreatorFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
+
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE & ~E_WARNING);
 
 // Instantiate PHP-DI ContainerBuilder
 $containerBuilder = new ContainerBuilder();
@@ -22,6 +24,14 @@ if (false) { // Should be set to true in production
 // Set up settings
 $settings = require __DIR__ . '/../app/settings.php';
 $settings($containerBuilder);
+
+// Set up db
+$db = require __DIR__ . '/../app/db.php';
+$db($containerBuilder);
+
+// Set up cycle
+$cycle = require __DIR__ . '/../app/cycle.php';
+$cycle($containerBuilder);
 
 // Set up dependencies
 $dependencies = require __DIR__ . '/../app/dependencies.php';

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Services\Style\Dto;
+namespace src\Application\Services\Style\Dto;
 
-use App\Application\Services\LoadableFromArray;
+use src\Application\Services\LoadableFromArray;
 use Exception;
 
 class StyleDto implements LoadableFromArray

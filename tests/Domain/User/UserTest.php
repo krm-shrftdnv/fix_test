@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Domain\User;
 
-use App\Domain\User\User;
+use src\Domain\User\User;
 use Tests\TestCase;
 
 class UserTest extends TestCase

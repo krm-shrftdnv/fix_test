@@ -1,18 +1,19 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Domain\Action;
+namespace src\Domain\Action;
 
-use App\Domain\Dance\Dance;
-use App\Domain\DanceAction\DanceAction;
-use App\Domain\Guest\Guest;
-use App\Domain\Skill\Skill;
+use src\Domain\Dance\Dance;
+use src\Domain\DanceAction\DanceAction;
+use src\Domain\Guest\Guest;
+use src\Domain\Skill\Skill;
+use src\Infrastructure\Persistence\Action\CycleActionRepository;
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
 use Cycle\Annotated\Annotation\Relation\ManyToMany;
 use JsonSerializable;
 
-#[Entity(table: 'action')]
+#[Entity(repository: CycleActionRepository::class, table: 'action')]
 class Action implements JsonSerializable
 {
     #[Column(type: 'primary')]

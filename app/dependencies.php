@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-use App\Application\Settings\SettingsInterface;
+use src\Application\Settings\SettingsInterface;
 use DI\ContainerBuilder;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Processor\UidProcessor;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
 return function (ContainerBuilder $containerBuilder) {
     $containerBuilder->addDefinitions([
@@ -26,5 +27,6 @@ return function (ContainerBuilder $containerBuilder) {
 
             return $logger;
         },
+        Psr\Cache\CacheItemPoolInterface::class => fn() => new FilesystemAdapter(),
     ]);
 };

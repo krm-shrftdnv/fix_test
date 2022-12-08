@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Dance;
+namespace src\Domain\Dance;
 
-use App\Infrastructure\Persistence\RepositoryInterface;
+use src\Infrastructure\Persistence\RepositoryInterface;
 
 interface DanceRepository extends RepositoryInterface
 {

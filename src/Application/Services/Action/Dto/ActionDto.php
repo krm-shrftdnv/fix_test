@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Services\Action\Dto;
+namespace src\Application\Services\Action\Dto;
 
-use App\Application\Services\LoadableFromArray;
+use src\Application\Services\LoadableFromArray;
 use Exception;
 
 class ActionDto implements LoadableFromArray
@@ -24,7 +24,7 @@ class ActionDto implements LoadableFromArray
         return new self(
             id: $data['id'] ?? null,
             name: $data['name'],
-            isDefault: $data['is_default'],
+            isDefault: $data['is_default'] ?? false,
         );
     }
 }

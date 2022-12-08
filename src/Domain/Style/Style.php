@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Style;
+namespace src\Domain\Style;
 
-use App\Domain\Dance\Dance;
-use App\Domain\StyleDance\StyleDance;
+use src\Domain\Dance\Dance;
+use src\Domain\StyleDance\StyleDance;
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
 use Cycle\Annotated\Annotation\Relation\ManyToMany;

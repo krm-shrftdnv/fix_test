@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions\Style;
+namespace src\Application\Actions\Style;
 
-use App\Application\Actions\ValidationException;
-use App\Application\Services\Style\Dto\StyleDto;
+use src\Application\Actions\ValidationException;
+use src\Application\Services\Style\Dto\StyleDto;
 use Exception;
 use Psr\Http\Message\ResponseInterface as Response;
 use Respect\Validation\Validator as V;

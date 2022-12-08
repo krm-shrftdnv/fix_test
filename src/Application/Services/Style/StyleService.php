@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Services\Style;
+namespace src\Application\Services\Style;
 
-use App\Application\Services\Style\Dto\StyleDto;
-use App\Domain\Style\Style;
-use App\Domain\Style\StyleRepository;
+use src\Application\Services\Style\Dto\StyleDto;
+use src\Domain\Style\Style;
+use src\Domain\Style\StyleRepository;
 
 class StyleService
 {

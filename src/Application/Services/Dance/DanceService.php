@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Services\Dance;
+namespace src\Application\Services\Dance;
 
-use App\Application\Services\Dance\Dto\DanceDto;
-use App\Domain\Dance\Dance;
-use App\Domain\Dance\DanceRepository;
+use src\Application\Services\Dance\Dto\DanceDto;
+use src\Domain\Dance\Dance;
+use src\Domain\Dance\DanceRepository;
 
 class DanceService
 {

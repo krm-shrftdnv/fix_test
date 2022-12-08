@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions\Song;
+namespace src\Application\Actions\Song;
 
-use App\Application\Actions\Action;
-use App\Application\Services\Song\SongService;
-use App\Domain\Song\SongRepository;
+use src\Application\Actions\Action;
+use src\Application\Services\Song\SongService;
+use src\Domain\Song\SongRepository;
 use Awurth\SlimValidation\Validator;
 use Psr\Log\LoggerInterface;
 

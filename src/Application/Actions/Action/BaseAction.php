@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions\Action;
+namespace src\Application\Actions\Action;
 
-use App\Application\Actions\Action;
-use App\Application\Services\Action\ActionService;
-use App\Domain\Action\ActionRepository;
+use src\Application\Actions\Action;
+use src\Application\Services\Action\ActionService;
+use src\Domain\Action\ActionRepository;
 use Awurth\SlimValidation\Validator;
 use Psr\Log\LoggerInterface;
 

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Dance;
+namespace src\Domain\Dance;
 
-use App\Domain\Action\Action;
-use App\Domain\DanceAction\DanceAction;
-use App\Domain\Style\Style;
-use App\Domain\StyleDance\StyleDance;
+use src\Domain\Action\Action;
+use src\Domain\DanceAction\DanceAction;
+use src\Domain\Style\Style;
+use src\Domain\StyleDance\StyleDance;
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
 use Cycle\Annotated\Annotation\Relation\ManyToMany;
@@ -15,7 +15,7 @@ use Cycle\Annotated\Annotation\Relation\ManyToMany;
 #[Entity(table: 'dance')]
 class Dance implements \JsonSerializable
 {
-    #[Column(type: 'integer')]
+    #[Column(type: 'primary')]
     private ?int $id;
     #[Column(type: 'string')]
     private string $name;

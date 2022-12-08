@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Song;
+namespace src\Domain\Song;
 
-use App\Infrastructure\Persistence\RepositoryInterface;
+use src\Infrastructure\Persistence\RepositoryInterface;
 
 interface SongRepository extends RepositoryInterface
 {

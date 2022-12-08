@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Services\Guest\Dto;
+namespace src\Application\Services\Guest\Dto;
 
-use App\Application\Services\LoadableFromArray;
+use src\Application\Services\LoadableFromArray;
 use Exception;
 
 class GuestDto implements LoadableFromArray
@@ -13,6 +13,7 @@ class GuestDto implements LoadableFromArray
         public ?int    $id = null,
         public ?string $name = null,
         public ?string $type = null,
+        public array $skills = [],
     )
     {
     }
@@ -26,6 +27,7 @@ class GuestDto implements LoadableFromArray
             id: $data['id'] ?? null,
             name: $data['name'],
             type: $data['type'],
+            skills: $data['skills'],
         );
     }
 }

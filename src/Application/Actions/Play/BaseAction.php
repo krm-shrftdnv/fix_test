@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions\Play;
+namespace src\Application\Actions\Play;
 
-use App\Application\Actions\Action;
-use App\Domain\Action\ActionRepository;
-use App\Domain\Guest\GuestRepository;
-use App\Domain\Style\StyleRepository;
-use App\Domain\Song\SongRepository;
+use src\Application\Actions\Action;
+use src\Domain\Action\ActionRepository;
+use src\Domain\Guest\GuestRepository;
+use src\Domain\Style\StyleRepository;
+use src\Domain\Song\SongRepository;
 use Psr\Log\LoggerInterface;
 
 abstract class BaseAction extends Action

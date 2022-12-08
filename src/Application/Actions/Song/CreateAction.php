@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions\Song;
+namespace src\Application\Actions\Song;
 
-use App\Application\Actions\ValidationException;
-use App\Application\Services\Song\Dto\SongDto;
+use src\Application\Actions\ValidationException;
+use src\Application\Services\Song\Dto\SongDto;
 use Exception;
 use Psr\Http\Message\ResponseInterface as Response;
 use Respect\Validation\Validator as V;

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Persistence\Action;
+namespace src\Infrastructure\Persistence\Action;
 
-use App\Domain\Action\ActionRepository;
-use App\Infrastructure\Persistence\Repository;
+use src\Domain\Action\ActionRepository;
+use src\Infrastructure\Persistence\Repository;
 
 class CycleActionRepository extends Repository implements ActionRepository
 {

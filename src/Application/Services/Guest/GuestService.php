@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Services\Guest;
+namespace src\Application\Services\Guest;
 
-use App\Application\Services\Guest\Dto\GuestDto;
-use App\Domain\Guest\Guest;
-use App\Domain\Guest\GuestRepository;
+use src\Application\Services\Guest\Dto\GuestDto;
+use src\Domain\Guest\Guest;
+use src\Domain\Guest\GuestRepository;
 
 class GuestService
 {

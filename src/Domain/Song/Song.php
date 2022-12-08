@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Song;
+namespace src\Domain\Song;
 
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;

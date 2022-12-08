@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Application\Actions\User\ListUsersAction;
-use App\Application\Actions\User\ViewUserAction;
+use src\Application\Actions\User\ListUsersAction;
+use src\Application\Actions\User\ViewUserAction;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
@@ -26,32 +26,32 @@ return function (App $app) {
     });
 
     $app->group('/action', function (Group $group) {
-        $group->get('', \App\Application\Actions\Action\ListAction::class);
-        $group->delete('/{id}', \App\Application\Actions\Action\DeleteAction::class);
-        $group->post('', \App\Application\Actions\Action\CreateAction::class);
+        $group->get('', \src\Application\Actions\Action\ListAction::class);
+        $group->delete('/{id}', \src\Application\Actions\Action\DeleteAction::class);
+        $group->post('', \src\Application\Actions\Action\CreateAction::class);
     });
 
     $app->group('/guest', function (Group $group) {
-        $group->get('', \App\Application\Actions\Guest\ListAction::class);
-        $group->delete('/{id}', \App\Application\Actions\Guest\DeleteAction::class);
-        $group->post('', \App\Application\Actions\Guest\CreateAction::class);
+        $group->get('', \src\Application\Actions\Guest\ListAction::class);
+        $group->delete('/{id}', \src\Application\Actions\Guest\DeleteAction::class);
+        $group->post('', \src\Application\Actions\Guest\CreateAction::class);
     });
 
     $app->group('/style', function (Group $group) {
-        $group->get('', \App\Application\Actions\Style\ListAction::class);
-        $group->delete('/{id}', \App\Application\Actions\Action\DeleteAction::class);
-        $group->post('', \App\Application\Actions\Action\CreateAction::class);
+        $group->get('', \src\Application\Actions\Style\ListAction::class);
+        $group->delete('/{id}', \src\Application\Actions\Action\DeleteAction::class);
+        $group->post('', \src\Application\Actions\Action\CreateAction::class);
     });
 
     $app->group('/dance', function (Group $group) {
-        $group->get('', \App\Application\Actions\Dance\ListAction::class);
-        $group->delete('/{id}', \App\Application\Actions\Dance\DeleteAction::class);
-        $group->post('', \App\Application\Actions\Dance\CreateAction::class);
+        $group->get('', \src\Application\Actions\Dance\ListAction::class);
+        $group->delete('/{id}', \src\Application\Actions\Dance\DeleteAction::class);
+        $group->post('', \src\Application\Actions\Dance\CreateAction::class);
     });
 
     $app->group('/song', function (Group $group) {
-        $group->get('', \App\Application\Actions\Action\ListAction::class);
-        $group->delete('/{id}', \App\Application\Actions\Action\DeleteAction::class);
-        $group->post('', \App\Application\Actions\Action\CreateAction::class);
+        $group->get('', \src\Application\Actions\Action\ListAction::class);
+        $group->delete('/{id}', \src\Application\Actions\Action\DeleteAction::class);
+        $group->post('', \src\Application\Actions\Action\CreateAction::class);
     });
 };

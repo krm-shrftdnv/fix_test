@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Persistence\Song;
+namespace src\Infrastructure\Persistence\Song;
 
-use App\Infrastructure\Persistence\Repository;
+use src\Infrastructure\Persistence\Repository;
 
-class CycleSongRepository extends Repository implements \App\Domain\Song\SongRepository
+class CycleSongRepository extends Repository implements \src\Domain\Song\SongRepository
 {
 
 }

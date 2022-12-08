@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions\Guest;
+namespace src\Application\Actions\Guest;
 
-use App\Application\Actions\Action;
-use App\Application\Services\Guest\GuestService;
-use App\Domain\Guest\GuestRepository;
+use src\Application\Actions\Action;
+use src\Application\Services\Guest\GuestService;
+use src\Domain\Guest\GuestRepository;
 use Awurth\SlimValidation\Validator;
 use Psr\Log\LoggerInterface;
 

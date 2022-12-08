@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions\Style;
+namespace src\Application\Actions\Style;
 
-use App\Application\Actions\Action;
-use App\Application\Services\Style\StyleService;
-use App\Domain\Style\StyleRepository;
+use src\Application\Actions\Action;
+use src\Application\Services\Style\StyleService;
+use src\Domain\Style\StyleRepository;
 use Awurth\SlimValidation\Validator;
 use Psr\Log\LoggerInterface;
 
