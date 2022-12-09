@@ -1,21 +1,27 @@
 # syntax=docker/dockerfile:1
 
 ## Build
-FROM golang:alpine AS build
-ENV CGO_ENABLED 0
-ENV GOOS linux
-RUN unset GOPATH
-WORKDIR /go
-COPY /go/go.mod ./
-COPY /go/go.sum ./
+FROM golang:1.16-buster AS build
+
+WORKDIR ./go
+
+COPY ./go/go.mod ./
+COPY ./go/go.sum ./
 RUN go mod download
-COPY /go/ .
-RUN go build -o /go .
+
+COPY ./go/ ./
+
+RUN go build -o /fix_test
 
 ## Deploy
-FROM alpine
-RUN apk add --no-cache ca-certificates && update-ca-certificates
-WORKDIR /go
-COPY --from=build /go /go
-EXPOSE ${GO_PORT}
-ENTRYPOINT ["/go"]
+FROM gcr.io/distroless/base-debian10
+
+WORKDIR /
+
+COPY --from=build /fix_test /fix_test
+
+EXPOSE 8080
+
+#USER nonroot:nonroot
+
+ENTRYPOINT ["/fix_test"]

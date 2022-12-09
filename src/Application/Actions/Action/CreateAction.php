@@ -27,11 +27,7 @@ class CreateAction extends BaseAction
         if (!$this->validator->isValid()) {
             throw new ValidationException($this->request, $this->validator->getErrors());
         }
-        try {
-            $dto = ActionDto::fromArray($data);
-        } catch (Exception $e) {
-            throw new HttpBadRequestException($this->request, $e->getMessage());
-        }
+        $dto = ActionDto::fromArray($data);
         try {
             $action = $this->actionService->create($dto);
         } catch (Exception $e) {

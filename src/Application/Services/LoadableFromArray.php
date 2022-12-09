@@ -8,8 +8,5 @@ use Exception;
 
 interface LoadableFromArray
 {
-    /**
-     * @throws Exception
-     */
     public static function fromArray(array $data);
 }

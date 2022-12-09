@@ -18,9 +18,6 @@ class SongDto implements LoadableFromArray
     ) {
     }
 
-    /**
-     * @throws Exception
-     */
     public static function fromArray(array $data): SongDto
     {
         return new self(

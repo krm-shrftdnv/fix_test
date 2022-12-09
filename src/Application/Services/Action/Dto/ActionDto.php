@@ -16,9 +16,6 @@ class ActionDto implements LoadableFromArray
     ) {
     }
 
-    /**
-     * @throws Exception
-     */
     public static function fromArray(array $data): ActionDto
     {
         return new self(

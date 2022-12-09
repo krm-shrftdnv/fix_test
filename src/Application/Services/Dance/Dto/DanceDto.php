@@ -16,9 +16,6 @@ class DanceDto implements LoadableFromArray
     ) {
     }
 
-    /**
-     * @throws Exception
-     */
     public static function fromArray(array $data): DanceDto
     {
         return new self(

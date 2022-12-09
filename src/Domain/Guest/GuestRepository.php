@@ -8,4 +8,6 @@ use src\Infrastructure\Persistence\RepositoryInterface;
 
 interface GuestRepository extends RepositoryInterface
 {
+    public function getDancingGuests(): array;
+    public function getDrinkingGuests(array $dancingGuestsIds): array;
 }

@@ -25,6 +25,10 @@ if (false) { // Should be set to true in production
 $settings = require __DIR__ . '/../app/settings.php';
 $settings($containerBuilder);
 
+// Set up amqp
+$amqp = require __DIR__ . '/../app/amqp.php';
+$amqp($containerBuilder);
+
 // Set up db
 $db = require __DIR__ . '/../app/db.php';
 $db($containerBuilder);

@@ -11,8 +11,9 @@ use src\Domain\StyleDance\StyleDance;
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
 use Cycle\Annotated\Annotation\Relation\ManyToMany;
+use src\Infrastructure\Persistence\Dance\CycleDanceRepository;
 
-#[Entity(table: 'dance')]
+#[Entity(repository: CycleDanceRepository::class, table: 'dance')]
 class Dance implements \JsonSerializable
 {
     #[Column(type: 'primary')]

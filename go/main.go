@@ -51,7 +51,7 @@ func dj() {
 	app.FailOnError(err, "Find playing")
 	if playingSong != nil {
 		// todo: нормальное сравнение времени окончания и текущего
-		if playingSong.LastPlayedAt.Add(playingSong.Duration * time.Second).After(time.Now()) {
+		if playingSong.LastPlayedAt.Add(playingSong.Duration*time.Second).Unix() > time.Now().Unix() {
 			err = tx.Commit()
 			app.FailOnError(err, "Commit transaction")
 			return

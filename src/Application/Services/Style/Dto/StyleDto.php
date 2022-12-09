@@ -15,9 +15,6 @@ class StyleDto implements LoadableFromArray
     ) {
     }
 
-    /**
-     * @throws Exception
-     */
     public static function fromArray(array $data): self
     {
         return new self(

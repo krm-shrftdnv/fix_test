@@ -6,8 +6,9 @@ namespace src\Domain\Song;
 
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
+use src\Infrastructure\Persistence\Song\CycleSongRepository;
 
-#[Entity(table: 'song')]
+#[Entity(repository: CycleSongRepository::class, table: 'song')]
 class Song implements \JsonSerializable
 {
     #[Column(type: 'primary')]

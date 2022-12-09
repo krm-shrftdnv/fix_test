@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-use src\Application\Actions\User\ListUsersAction;
-use src\Application\Actions\User\ViewUserAction;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
+use src\Application\Actions\User\ListUsersAction;
+use src\Application\Actions\User\ViewUserAction;
 
 return function (App $app) {
     $app->options('/{routes:.*}', function (Request $request, Response $response) {
@@ -53,5 +53,10 @@ return function (App $app) {
         $group->get('', \src\Application\Actions\Action\ListAction::class);
         $group->delete('/{id}', \src\Application\Actions\Action\DeleteAction::class);
         $group->post('', \src\Application\Actions\Action\CreateAction::class);
+    });
+
+    $app->group('/party', function (Group $group) {
+        $group->get('', \src\Application\Actions\Party\IndexAction::class);
+        $group->get('/start', \src\Application\Actions\Party\StartAction::class);
     });
 };

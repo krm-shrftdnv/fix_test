@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace src\Domain\Guest;
 
-use src\Domain\Action\Action;
-use src\Domain\Skill\Skill;
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
 use Cycle\Annotated\Annotation\Relation\ManyToMany;
 use JsonSerializable;
+use src\Domain\Action\Action;
+use src\Domain\Skill\Skill;
+use src\Infrastructure\Persistence\Guest\CycleGuestRepository;
 
-#[Entity(table: 'guest')]
+#[Entity(repository: CycleGuestRepository::class, table: 'guest')]
 class Guest implements JsonSerializable
 {
     #[Column(type: 'primary')]
@@ -59,6 +60,7 @@ class Guest implements JsonSerializable
             'id' => $this->id,
             'name' => $this->name,
             'type' => $this->type,
+            'skills' => $this->skills,
         ];
     }
 }

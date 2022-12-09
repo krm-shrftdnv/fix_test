@@ -18,9 +18,6 @@ class GuestDto implements LoadableFromArray
     {
     }
 
-    /**
-     * @throws Exception
-     */
     public static function fromArray(array $data): GuestDto
     {
         return new self(
