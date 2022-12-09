@@ -9,3 +9,5 @@ RUN docker-php-ext-install \
         pgsql pdo_pgsql sockets \
     && docker-php-ext-enable \
         pgsql pdo_pgsql sockets
+
+COPY --from=composer /usr/bin/composer /usr/bin/composer
