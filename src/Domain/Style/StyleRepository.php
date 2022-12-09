@@ -8,5 +8,5 @@ use src\Infrastructure\Persistence\RepositoryInterface;
 
 interface StyleRepository extends RepositoryInterface
 {
-
+    public function findStyles(array $styleIds): array;
 }

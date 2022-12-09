@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace src\Application\Actions\Dance;
 
-use src\Application\Actions\ValidationException;
-use src\Application\Services\Dance\Dto\DanceDto;
 use Exception;
 use Psr\Http\Message\ResponseInterface as Response;
 use Respect\Validation\Validator as V;
-use Slim\Exception\HttpBadRequestException;
 use Slim\Exception\HttpInternalServerErrorException;
+use src\Application\Actions\ValidationException;
+use src\Application\Services\Dance\Dto\DanceDto;
 
 class CreateAction extends BaseAction
 {
@@ -23,6 +22,7 @@ class CreateAction extends BaseAction
         $this->validator->validate($data, [
             'name' => V::stringType(),
             'actions' => V::arrayType()::each(V::intType()),
+            'styles' => V::arrayType()::each(V::intType()),
         ]);
         if (!$this->validator->isValid()) {
             throw new ValidationException($this->request, $this->validator->getErrors());

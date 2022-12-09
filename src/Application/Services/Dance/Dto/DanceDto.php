@@ -13,6 +13,7 @@ class DanceDto implements LoadableFromArray
         public ?int $id = null,
         public ?string $name = null,
         public array $actionIds = [],
+        public array $styleIds = [],
     ) {
     }
 
@@ -22,6 +23,7 @@ class DanceDto implements LoadableFromArray
             id: $data['id'] ?? null,
             name: $data['name'],
             actionIds: $data['actions'],
+            styleIds: $data['styles'],
         );
     }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace src\Infrastructure\Persistence\Action;
 
+use Cycle\Database\Injection\Parameter;
 use src\Domain\Action\Action;
 use src\Domain\Action\ActionRepository;
 use src\Infrastructure\Persistence\Repository;
@@ -29,5 +30,11 @@ class CycleActionRepository extends Repository implements ActionRepository
                 'skilledGuests.id' => $guestId,
             ])
             ->fetchAll();
+    }
+
+    public function findActions(array $actionsIds): array
+    {
+        $select = clone $this->select;
+        return $select->where(['id' => new Parameter($actionsIds)])->fetchAll();
     }
 }
